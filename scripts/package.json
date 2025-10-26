@@ -1,0 +1,9 @@
+{
+  "name": "verificar-conexion",
+  "version": "1.0.0",
+  "description": "Script para verificar la conexión entre frontend y backend",
+  "scripts": {
+    "verificar-backend": "node scripts/verificar-backend.js",
+    "verificar-completo": "node scripts/verificar-completo.js"
+  }
+}

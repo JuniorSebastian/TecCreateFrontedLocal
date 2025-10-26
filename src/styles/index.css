@@ -1,0 +1,364 @@
+/* src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 100px; /* Si usas sticky navbar */
+}
+
+/* Animaciones personalizadas mejoradas */
+@layer utilities {
+  /* Animación de texto shimmer */
+  @keyframes text-shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-text-shimmer {
+    animation: text-shimmer 3s ease-in-out infinite;
+    background-size: 200% auto;
+  }
+
+  /* Animación blob mejorada */
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    25% {
+      transform: translate(20px, -50px) scale(1.1);
+    }
+    50% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+      transform: translate(20px, 20px) scale(1.05);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite ease-in-out;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Animación float suave */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Animación de spin lento */
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
+  /* Animación de fade in */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  /* Animación de slide from left */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  /* Animación de slide from right */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  /* Animación de shimmer para efectos de brillo */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  /* Animación de pulse con glow */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(6, 182, 212, 0.8);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Animación de gradiente */
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  /* Animación de bounce suave */
+  @keyframes bounce-soft {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-bounce-soft {
+    animation: bounce-soft 2s ease-in-out infinite;
+  }
+
+  /* Animación de scale in */
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  /* Animación de rotate lento */
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  /* Delays personalizados */
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  /* Utilidad para background size */
+  .bg-size-200 {
+    background-size: 200% 200%;
+  }
+
+  /* Shadow mejorado */
+  .shadow-3xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .hover\:shadow-3xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Gradientes de texto personalizados */
+  .text-gradient-cyan {
+    @apply bg-gradient-to-r from-teal-300 to-sky-400 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-rainbow {
+    @apply bg-gradient-to-r from-teal-300 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+  }
+}
+
+/* Estilos base mejorados */
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  /* Scrollbar personalizado */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-teal-400 to-sky-500 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-teal-500 to-sky-600;
+  }
+
+  /* Scrollbar personalizado para notificaciones */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-teal-50/50 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-teal-400 to-sky-500 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply from-teal-500 to-sky-600;
+  }
+}
+
+/* Componentes reutilizables */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-teal-400 to-sky-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-full hover:border-teal-400 hover:text-teal-600 transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-xl border border-gray-100 p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/60;
+  }
+}
+
+/* Animation delays para efectos escalonados */
+@layer utilities {
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
+}
+
